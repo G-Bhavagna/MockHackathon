@@ -2,12 +2,17 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import logo from './logo.png';
 import './authentication.css';
+import { loginUser } from '../services/UserService';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+  const [user, setUser] = useState({});
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   });
+
+  const navigate=useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,7 +21,15 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    loginUser(formData).then((response)=>{
+        setUser(response.data);
+        console.log(response.data);
+        navigate('/');
+    }).catch((error)=>{
+      navigate('/login');
+        console.error('Error logging in user:', error);
+    }
+    );
     // try {
     //   const response = await axios.post('YOUR_API_ENDPOINT', formData);
     //   console.log(response.data);
