@@ -6,6 +6,7 @@ import image3 from './image3.png';
 import logo from './logo.png';
 
 import './authentication.css';
+import { registerUser } from '../services/UserService';
 
 function Signup() {
   const images = [image1, image2, image3];
@@ -22,8 +23,15 @@ function Signup() {
     email: '',
     dateOfBirth: '',
     password: '',
-    confirmPassword: ''
+    
   });
+  // const [firstName, setFirstName] = useState('');
+  // const [lastName, setLastName] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [dateOfBirth, setDateOfBirth] = useState('');
+  // const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -43,13 +51,20 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    // try {
-    //   const response = await axios.post('YOUR_API_ENDPOINT', formData);
-    //   console.log(response.data);
-    // } catch (error) {
-    //   console.error('Error submitting form:', error);
-    // }
+    if (formData.password !== confirmPassword) {
+      alert('Passwords do not match');
+      return;
+    } else {
+      try {
+        registerUser(formData).then((response) => {
+            console.log(response.data);
+        });
+      } catch (error) {
+        console.error('Error registering user:', error);
+      }
+    }
+    // console.log(formData);
+    
   };
 
   return (
@@ -141,8 +156,8 @@ function Signup() {
                 <input
                   type="password"
                   name="confirmPassword"
-                  value={formData.confirmPassword}
-                  onChange={handleChange}
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Confirm password"
                 />
               </div>
