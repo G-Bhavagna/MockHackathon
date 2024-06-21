@@ -1,0 +1,91 @@
+/* app.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  font-size: 16px;
+}
+
+.custom-container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-panel, .right-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25em;
+}
+
+.left-panel {
+  background-color: #007BFF;
+  color: white;
+  flex: 0 0 30%; 
+}
+
+.left-panel h1 {
+  text-align: center;
+  margin-bottom: 1.25em;
+}
+
+.right-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  flex: 1;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 60em;
+}
+
+.right-panel h2.create-account-heading {
+  margin-bottom: 0.625em;
+  text-align: left;
+}
+
+.right-panel p {
+  margin-bottom: 1.25em;
+}
+
+.logo-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.logo {
+  width: 50px;
+}
+
+button {
+  width: 100%;
+  padding: 0.625em;
+  border: none;
+  border-radius: 0.3125em;
+  background-color: #007BFF;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; 
+  }
+
+  .left-panel, .right-panel {
+    flex: 1;
+    padding: 2em;
+  }
+}

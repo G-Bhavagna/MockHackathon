@@ -1,0 +1,165 @@
+.custom-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 25em;
+    overflow: hidden;
+    margin-bottom: 1.25em;
+  }
+  
+  .custom-carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .custom-carousel-images img {
+    width: 100%;
+  }
+  
+  .custom-carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.625em;
+  }
+  
+  .custom-carousel-indicators span {
+    width: 0.625em;
+    height: 0.625em;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 0.3125em;
+    cursor: pointer;
+  }
+  
+  .custom-carousel-indicators .active {
+    background-color: white;
+  }
+  
+  .custom-form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.1em;
+    gap: 3.55em;
+  }
+  
+  .custom-input-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .custom-input-container label {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+  }
+  
+  .custom-form-group input {
+    flex: 1;
+    padding: 0.625em;
+    border: 1px solid #ccc;
+    border-radius: 0.3125em;
+    margin-bottom: 0.625em;
+  }
+  
+  @media (max-width: 768px) {
+    .custom-form-group {
+      flex-direction: column;
+      gap: 0;
+    }
+  
+    .custom-form-group input {
+      width: 100%;
+    }
+  }
+  
+  /* app.css */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    font-size: 16px;
+  }
+  
+  .custom-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .left-panel, .right-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25em;
+  }
+  
+  .left-panel {
+    background-color: #007BFF;
+    color: white;
+    flex: 0 0 30%;
+  }
+  
+  .left-panel h1 {
+    text-align: center;
+    margin-bottom: 1.25em;
+  }
+  
+  .right-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    flex: 1;
+  }
+  
+  .form-container {
+    width: 100%;
+    max-width: 60em;
+  }
+  
+  .right-panel h2.custom-create-account-heading {
+    margin-bottom: 0.625em;
+    text-align: left;
+  }
+  
+  .right-panel p {
+    margin-bottom: 1.25em;
+  }
+  
+  .custom-logo-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  
+  .custom-logo {
+    width: 50px;
+  }
+  
+  .custom-button {
+    width: 100%;
+    padding: 0.625em;
+    border: none;
+    border-radius: 0.3125em;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
+  .custom-button:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 768px) {
+    .custom-container {
+      flex-direction: column;
+    }
+  
+    .left-panel, .right-panel {
+      flex: 1;
+      padding: 2em;
+    }
+  }
+  
